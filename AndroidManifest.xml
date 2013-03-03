@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+		Licensed under the Apache License, Version 2.0 (the "License"); you
+		may not use this file except in compliance with the License. You may
+		obtain a copy of the License at:
+		http://www.apache.org/licenses/LICENSE-2.0. Unless required by
+		applicable law or agreed to in writing, software distributed under the
+		License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+		CONDITIONS OF ANY KIND, either express or implied. See the License for
+		the specific language governing permissions and limitations under the
+		License.
+	-->
+<manifest android:installLocation="internalOnly"
+    android:versionCode="27" android:versionName="1.9.10"
+    package="org.treasurehunter" xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-sdk android:minSdkVersion="3" android:targetSdkVersion="4"/>
+    <supports-screens android:anyDensity="false"
+        android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+    <application android:debuggable="false" android:icon="@drawable/map" android:label="@string/app_name">
+        <uses-library android:name="com.google.android.maps" android:required="true"/>
+        <activity android:label="TreasureHunter" android:name=".activity.searchonline.SearchOnlineActivity"/>
+        <!--
+			Destroy on orientation changes would lose any edits the user has
+			made. (http://code.google.com/p/geobeagle/issues/detail?id=43)
+		-->
+        <activity android:label="Edit TreasureHunter" android:name=".activity.edit.EditCacheActivity"/>
+        <activity android:label="@string/app_name" android:name=".activity.preferences.EditPreferences"/>
+        <activity android:label="TreasureHunter proximity" android:name=".activity.prox.ProximityActivity"/>
+        <activity android:label="TreasureHunter filters" android:name=".activity.filterlist.FilterListActivity"/>
+        <activity android:label="TreasureHunter Waypoint" android:name=".activity.waypoint.project.ProjectWaypointActivity"/>
+        <!-- 	android:theme="@android:style/Theme.Light"  -->
+        <activity android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:name=".activity.main.MainActivity" android:theme="@android:style/Theme.NoTitleBar">
+            <!-- This metadata entry causes .activity.main.MainActivity to be the default context -->
+            <!-- whenever the user invokes search while in this Activity. -->
+            <meta-data android:name="android.app.default_searchable" android:value=".activity.main.MainActivity"/>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <!-- Is this intent-filter needed for anything? -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="maps.google.com"
+                    android:pathPrefix="/maps" android:scheme="http"/>
+            </intent-filter>
+            <!-- For selecting a waypoint from DetailsTab -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="TreasureHunter.org"
+                    android:pathPrefix="/select" android:scheme="TreasureHunter"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:mimeType="application/zip"/>
+                <data android:mimeType="application/octet-stream" android:pathPattern=".*\\.gpx"/>
+                <data android:mimeType="application/octet-stream" android:pathPattern=".*\\.loc"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".SplashActivityMain"/>
+        <activity android:name=".Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".jsondb"/>
+        <activity android:name=".EditCacheActivityJson"/>
+        <activity android:name="org.treasurehunter.activity.cachelist.MenuActionMyLocationUpdate"/>
+        <activity android:name=".ElectromedicaTask"/>
+    </application>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+</manifest>

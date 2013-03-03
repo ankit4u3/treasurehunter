@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;org.TreasureHunter&apos; to &apos;com.ankit.treasurehunting&apos;&#x0D;&#x0A;- Original project: &apos;TreasureHunter&apos;&#x0D;&#x0A;- Original element: &apos;TreasureHunter/src/org.TreasureHunter&apos;&#x0D;&#x0A;- Renamed element: &apos;TreasureHunter/src/com.ankit.treasurehunting&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update fully qualified names in &apos;*&apos; files&#x0D;&#x0A;- Update textual occurrences in comments and strings&#x0D;&#x0A;- Rename subpackages of the package" description="Rename package &apos;org.TreasureHunter&apos;" flags="589830" hierarchical="true" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;org.TreasureHunter" name="com.ankit.treasurehunting" patterns="*" qualified="true" references="true" stamp="1359227028433" textual="true" version="1.0"/>
+</session>

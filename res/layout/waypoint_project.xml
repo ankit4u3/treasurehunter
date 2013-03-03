@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="wrap_content"
+	android:scrollbars="vertical">
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical" android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+
+
+		<TextView android:text="@string/project_start_coordinates"
+			android:id="@+id/project_start_label" android:layout_marginTop="1dip"
+			android:textSize="15sp" android:textStyle="bold"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"></TextView>
+
+		<EditText android:text="N49 00.000 E008 00.000" android:id="@+id/project_start_coords"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_below="@+id/project_start_label"
+			android:layout_alignLeft="@+id/project_start_label"></EditText>
+
+
+		<TextView android:text="@string/project_distance_and_bearing"
+			android:id="@+id/project_distance_label" android:layout_marginTop="1dip"
+			android:textSize="15sp" android:textStyle="bold"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"></TextView>
+
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="horizontal" android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+
+			<EditText android:text="100" android:id="@+id/project_distance_length"
+				android:layout_width="80sp" android:layout_height="wrap_content"
+				android:numeric="decimal"></EditText>
+
+			<Spinner android:id="@+id/project_distance_unit"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:drawSelectorOnTop="true" android:prompt="@string/project_distance_unit_prompt" />
+
+			<EditText android:text="0" android:id="@+id/project_bearing_degrees"
+				android:layout_width="55sp" android:layout_height="wrap_content"
+				android:layout_below="@+id/project_distance_label" android:numeric="integer"></EditText>
+
+			<TextView android:text="@string/project_degrees" android:id="@+id/project_bearing_unit"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_below="@+id/project_distance_label"></TextView>
+
+		</LinearLayout>
+
+		<TextView android:text="@string/project_projected_coordinates"
+			android:id="@+id/project_end_label" android:layout_marginTop="1dip"
+			android:textSize="15sp" android:textStyle="bold"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"></TextView>
+
+		<TextView android:text="N49 00.000 E008 00.000" android:id="@+id/project_end_coords"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_below="@+id/project_end_label"
+			android:layout_alignLeft="@+id/project_end_label"
+			android:textSize="25sp" android:textStyle="normal"></TextView>
+
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:gravity="center" android:orientation="horizontal"
+			android:layout_width="fill_parent" android:layout_height="wrap_content">
+
+			<Button android:text="@string/project_create_new_waypoint"
+				android:id="@+id/project_new_waypoint" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:layout_weight="1"></Button>
+
+			<Button android:text="@string/project_cancel" android:id="@+id/project_cancel"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:layout_weight="1"></Button>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+
+</ScrollView>

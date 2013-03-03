@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:scrollbars="vertical">
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical" android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:padding="4sp" android:layout_gravity="fill_horizontal">
+
+		<TextView android:layout_width="fill_parent" android:text="Enter database name:"
+			android:layout_height="wrap_content" />
+		<EditText android:id="@+id/database_name" android:layout_height="fill_parent" android:lines="1" android:layout_width="400dip"/>
+		<CheckBox android:id="@+id/set_current_database" android:checked="true" android:text="Set as current database" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+		<LinearLayout android:layout_marginTop="20sp"
+			android:gravity="center" android:orientation="horizontal"
+			android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_gravity="fill_horizontal">
+			<Button android:id="@+id/create_database_name" android:text="Create"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:layout_weight="1" />
+			<Button android:id="@+id/cancel_database_name" android:text="Cancel"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:layout_weight="1" />
+		</LinearLayout>
+
+	</LinearLayout>
+</ScrollView>
+	

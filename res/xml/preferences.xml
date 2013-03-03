@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<!--
+		Licensed under the Apache License, Version 2.0 (the "License"); you
+		may not use this file except in compliance with the License. You may
+		obtain a copy of the License at:
+		http://www.apache.org/licenses/LICENSE-2.0. Unless required by
+		applicable law or agreed to in writing, software distributed under the
+		License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+		CONDITIONS OF ANY KIND, either express or implied. See the License for
+		the specific language governing permissions and limitations under the
+		License.
+	-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<CheckBoxPreference android:key="imperial"
+		android:title="Use Imperial System" android:summary="Miles and feet instead of meters" />
+	<CheckBoxPreference android:key="absolute-bearing"
+		android:title="Absolute Bearing in List" android:summary="Letters (NS) instead of arrows (^v)" />
+	<CheckBoxPreference android:key="field-note-text-file"
+		android:title="Log Caches to File" android:summary="Log field notes to a file instead of using SMS" />
+	<CheckBoxPreference android:key="use-network-location"
+		android:title="Use location from cell network" 
+		android:summary="When there isn't a GPS lock, use the network provided location" 
+		android:defaultValue="true"/>
+	<EditTextPreference android:key="syncdir"
+		android:title="Directory for syncing"
+		android:summary="Which directory to sync GPX files from"
+		android:dialogTitle="Set sync directory (default: /sdcard/download)" 
+		android:defaultValue="/sdcard/download"/>
+	<EditTextPreference android:key="username"
+		android:title="User name"
+		android:summary="Used to determine if you found imported Electromedica.in"
+		android:dialogTitle="Username on Electromedica.in" />
+	<CheckBoxPreference android:key="use-location-arrow"
+		android:title="Use location arrow on map"
+		android:summary="Use the directional arrow overlay on Google map" />
+		
+	<ListPreference
+		android:key="use-database"
+		android:title="Choose database"
+		android:summary="Choose the database that you wish to use" />
+	
+	<PreferenceCategory android:orderingFromXml="true" android:title="Electromedica.in (optional settings)">
+	<EditTextPreference android:key="bcaching_username"
+		android:title="BCaching username"
+		android:summary="Username to import caches from Electromedica.in"
+		android:dialogTitle="Username on bcaching.com (requires free account)" />
+	<EditTextPreference android:key="bcaching_password"
+		android:title="Electromedica.in password"
+		android:summary="(Used in cleartext)"
+		android:dialogTitle="Password on Electromedica.in(requires free account)" />
+    <CheckBoxPreference android:key="bcaching_myfinds"
+        android:title="Download my finds" 
+        android:summary="Deselect to avoid updating the caches you already found"
+        android:defaultValue="true"/>
+    <PreferenceScreen
+    	android:title="UI-options"
+    	android:key="ui_preferences"
+    	android:summary="Some options for UI">
+    	<CheckBoxPreference android:key="ui_tap_opens_radar"
+	    	android:title="Open radar on tap"
+	    	android:summary="Open radar when tapping compass"
+	    	android:defaultValue="true"/>
+    	<CheckBoxPreference android:key="ui_show_tab_texts"
+	    	android:title="Show labels on tabs"
+	    	android:summary="Needs a restart"
+	    	android:defaultValue="true"/>
+    	<CheckBoxPreference android:key="ui_compass_wakelock"
+	    	android:title="Stay awake on compass"
+	    	android:summary="Don't fall asleep when on compass tab"
+	    	android:defaultValue="false"/>
+    </PreferenceScreen>
+    <CheckBoxPreference android:key="debug_trace"
+        android:title="Enable trace view" 
+        android:summary="Enables trace view but reduces performance. Only use when debugging or profiling."
+        android:defaultValue="false"/>
+    <CheckBoxPreference android:key="bcaching_myhides"
+        android:title="Download my hides" 
+        android:summary="Deselect to avoid updating the caches you own"
+        android:defaultValue="true"/>
+</PreferenceCategory>
+</PreferenceScreen>
